@@ -1,5 +1,5 @@
 # wuwa-ascension-planner
-making a wuwa ascension planner because i can't find 1 that's up to date
+trying making a wuwa ascension planner because i can't find 1 that's up to date
 
 ### references :
 - https://starrailstation.com/en/planner 
