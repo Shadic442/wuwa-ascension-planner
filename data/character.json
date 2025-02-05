@@ -1,4 +1,12 @@
 {
-    "Id":1,
-    "Name":"C_"
-}
+    "data_characters": [
+      {
+        "id": 1,
+        "name": "Carlotta",
+        "currentLevel": 0,
+        "targetLevel": 0,
+        "currentAscension": 0,
+        "targetAscension": 0
+      }
+    ]
+  }
