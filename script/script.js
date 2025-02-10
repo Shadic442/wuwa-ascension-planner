@@ -13,12 +13,12 @@ let resultAscensionInput = document.getElementById("resultAscension");
 
 function calculateLevel() {
   if (
+    currentLevelInput.value == null ||
     targetLevelInput.value == null ||
-    targetLevelInput.value == null ||
-    targetLevelInput.value == 0 ||
+    currentLevelInput.value == 0 ||
     targetLevelInput.value == 0
   ) {
-    targetLevelInput.value = 1;
+    currentLevelInput.value = 1;
     targetLevelInput.value = 1;
   }
   total = parseInt(targetLevelInput.value) - parseInt(currentLevelInput.value);
