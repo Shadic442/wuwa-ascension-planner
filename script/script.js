@@ -7,10 +7,46 @@ let currentLevelInput = document.getElementById("currentLevel");
 let targetLevelInput = document.getElementById("targetLevel");
 let resultLevelInput = document.getElementById("resultLevel");
 let total = 0;
+let targetAscensionInput = document.getElementById("currentAscension");
+let currentAscensionInput = document.getElementById("targetAscension");
+let resultAscensionInput = document.getElementById("resultAscension");
 
 function calculateLevel() {
+  if (
+    targetLevelInput.value == null ||
+    targetLevelInput.value == null ||
+    targetLevelInput.value == 0 ||
+    targetLevelInput.value == 0
+  ) {
+    targetLevelInput.value = 1;
+    targetLevelInput.value = 1;
+  }
   total = parseInt(targetLevelInput.value) - parseInt(currentLevelInput.value);
   resultLevelInput.value = total;
+
+  console.log(`target Ascension level : ${calculateAscension(targetLevelInput.value)}`);
+  console.log(`current Ascension level : ${calculateAscension(currentLevelInput.value)}`);
+
+}
+
+function calculateAscension(level) {
+  let ascensionLevel = 0;
+  if (level >= 1 && level <= 20) {
+    ascensionLevel = 0;
+  } else if (level > 20 && level <= 40) {
+    ascensionLevel = 1;
+  } else if (level > 40 && level <= 50) {
+    ascensionLevel = 2;
+  } else if (level > 50 && level <= 60) {
+    ascensionLevel = 3;
+  } else if (level > 60 && level <= 70) {
+    ascensionLevel = 4;
+  } else if (level > 70 && level <= 80) {
+    ascensionLevel = 5;
+  } else if (level > 80 && level <= 90) {
+    ascensionLevel = 6;
+  }
+  return ascensionLevel;
 }
 
 function loadJSON() {
