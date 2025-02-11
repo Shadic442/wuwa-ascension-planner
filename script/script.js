@@ -7,8 +7,8 @@ let currentLevelInput = document.getElementById("currentLevel");
 let targetLevelInput = document.getElementById("targetLevel");
 let resultLevelInput = document.getElementById("resultLevel");
 let total = 0;
-let targetAscensionInput = document.getElementById("currentAscension");
-let currentAscensionInput = document.getElementById("targetAscension");
+let targetAscensionInput = document.getElementById("targetAscension");
+let currentAscensionInput = document.getElementById("currentAscension");
 let resultAscensionInput = document.getElementById("resultAscension");
 
 function calculateLevel() {
@@ -24,9 +24,15 @@ function calculateLevel() {
   total = parseInt(targetLevelInput.value) - parseInt(currentLevelInput.value);
   resultLevelInput.value = total;
 
-  console.log(`target Ascension level : ${calculateAscension(targetLevelInput.value)}`);
-  console.log(`current Ascension level : ${calculateAscension(currentLevelInput.value)}`);
+  targetAscensionInput.value = calculateAscension(targetLevelInput.value);
+  currentAscensionInput.value = calculateAscension(currentLevelInput.value);
 
+  console.log(
+    `target Ascension level : ${calculateAscension(targetLevelInput.value)}`
+  );
+  console.log(
+    `current Ascension level : ${calculateAscension(currentLevelInput.value)}`
+  );
 }
 
 function calculateAscension(level) {
