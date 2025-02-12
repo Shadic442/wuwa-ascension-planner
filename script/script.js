@@ -73,7 +73,7 @@ function loadJSON() {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
-//Option 1: Use localStorage (Client-Side Only) chatgpt
+//Option 1: Use localStorage (Client-Side Only)
 
 // Load JSON from localStorage or use default JSON
 /* let jsonData = JSON.parse(localStorage.getItem("jsonData")) || {
