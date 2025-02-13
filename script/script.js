@@ -1,5 +1,5 @@
 window.onload = function () {
-  loadJSON();
+  /* loadJSON(); */
 };
 
 let nameTitle = document.getElementById("nameTitle");
@@ -27,12 +27,12 @@ function calculateLevel() {
   targetAscensionInput.value = calculateAscension(targetLevelInput.value);
   currentAscensionInput.value = calculateAscension(currentLevelInput.value);
 
-  console.log(
+  /* console.log(
     `target Ascension level : ${calculateAscension(targetLevelInput.value)}`
   );
   console.log(
     `current Ascension level : ${calculateAscension(currentLevelInput.value)}`
-  );
+  ); */
 }
 
 function calculateAscension(level) {
@@ -65,35 +65,37 @@ function loadJSON() {
       /* listOfCharacter.data_characters[0].targetLevel = targetLevelInput.value; // does not save in the json file
       listOfCharacter.data_characters[0].currentLevel = currentLevel.value; */
 
-      console.log(listOfCharacter);
+      /* console.log(listOfCharacter);
       console.log(
         `character text : ${listOfCharacter.data_characters[0].name}`
-      );
+      ); */
     })
     .catch((error) => console.error("Error fetching data:", error));
 }
+
+/* var dataCharacters;
 fetch("data/character.json")
   .then((response) => response.json())
   .then((listOfCharacter) => {
-    /* var dataCharacters = listOfCharacter; */
-    console.log(listOfCharacter);
+    dataCharacters = JSON.stringify(listOfCharacter);
+    console.log(`fetch for variable : ${listOfCharacter}`);
   })
-  .catch((error) => console.error("Error fetching data:", error));
+  .catch((error) => console.error("Error fetching data:", error)); */
 
-//Option 1: Use localStorage (Client-Side Only) 
+//Option 1: Use localStorage (Client-Side Only)
 
 // Load JSON from localStorage or use default JSON
 /* let jsonData = JSON.parse(localStorage.getItem("jsonData")) || {
-  "data_characters": [
-     {
-       "id": 1,
-       "name": "C_Carlotta",
-       "currentLevel": 0,
-       "targetLevel": 0,
-       "currentAscension": 0,
-       "targetAscension": 0
-     }
-   ]
+  data_characters: [
+    {
+      id: 1,
+      name: "C_Carlotta",
+      currentLevel: 0,
+      targetLevel: 0,
+      currentAscension: 0,
+      targetAscension: 0,
+    },
+  ],
 };
 
 // Modify JSON
@@ -101,5 +103,19 @@ jsonData.data_characters[0].targetLevel = 10;
 
 // Save JSON to localStorage
 localStorage.setItem("jsonData", JSON.stringify(jsonData));
-console.log(jsonData.data_characters[0].targetLevel)
+console.log(jsonData.data_characters[0].targetLevel);
 console.log("Updated JSON saved to localStorage:", jsonData); */
+
+fetch("data/character.json")
+  .then((response) => response.json())
+  .then((data) => {
+    // Store it in a variable
+
+    let jsonData = JSON.parse(localStorage.getItem("jsonData")) || data;
+    // Store the JSON data into localStorage
+
+    localStorage.setItem("jsonData", JSON.stringify(data));
+
+    console.log("JSON data stored in localStorage:", jsonData);
+  })
+  .catch((error) => console.error("Error loading JSON file:", error));
