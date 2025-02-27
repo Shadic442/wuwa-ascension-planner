@@ -3,29 +3,29 @@ window.onload = function () {
 };
 
 let nameTitle = document.getElementById("nameTitle");
-let currentLevelInput = document.getElementById("currentLevel");
-let targetLevelInput = document.getElementById("targetLevel");
-let resultLevelInput = document.getElementById("resultLevel");
+let inputLevelCurrent = document.getElementById("currentLevel");
+let inputLevelTarget = document.getElementById("targetLevel");
+let inputLevelResult = document.getElementById("resultLevel");
 let total = 0;
-let targetAscensionInput = document.getElementById("targetAscension");
-let currentAscensionInput = document.getElementById("currentAscension");
-let resultAscensionInput = document.getElementById("resultAscension");
+let inputAscensionTarget = document.getElementById("targetAscension");
+let inputAscensionCurrent = document.getElementById("currentAscension");
+let inputAscensionResult = document.getElementById("resultAscension");
 
 function calculateLevel() {
   if (
-    currentLevelInput.value == null ||
-    targetLevelInput.value == null ||
-    currentLevelInput.value == 0 ||
-    targetLevelInput.value == 0
+    inputLevelCurrent.value == null ||
+    inputLevelTarget.value == null ||
+    inputLevelCurrent.value == 0 ||
+    inputLevelTarget.value == 0
   ) {
-    currentLevelInput.value = 1;
-    targetLevelInput.value = 1;
+    inputLevelCurrent.value = 1;
+    inputLevelTarget.value = 1;
   }
-  total = parseInt(targetLevelInput.value) - parseInt(currentLevelInput.value);
-  resultLevelInput.value = total;
+  total = parseInt(inputLevelTarget.value) - parseInt(inputLevelCurrent.value);
+  inputLevelResult.value = total;
 
-  targetAscensionInput.value = calculateAscension(targetLevelInput.value);
-  currentAscensionInput.value = calculateAscension(currentLevelInput.value);
+  inputAscensionTarget.value = calculateAscension(inputLevelTarget.value);
+  inputAscensionCurrent.value = calculateAscension(inputLevelCurrent.value);
 
   /* console.log(
     `target Ascension level : ${calculateAscension(targetLevelInput.value)}`
@@ -106,7 +106,13 @@ localStorage.setItem("jsonData", JSON.stringify(jsonData));
 console.log(jsonData.data_characters[0].targetLevel);
 console.log("Updated JSON saved to localStorage:", jsonData); */
 
-fetch("data/character.json")
+let pathToBaseCharacterJson = "data/character.json";
+/**
+ * fetch to load the initial data of characters,
+ * either from the character json file
+ * or from localstorage of the browser
+ */
+fetch(pathToBaseCharacterJson)
   .then((response) => response.json())
   .then((data) => {
     // Store it in a variable
@@ -119,3 +125,18 @@ fetch("data/character.json")
     console.log("JSON data stored in localStorage:", jsonData);
   })
   .catch((error) => console.error("Error loading JSON file:", error));
+
+function update(params) {
+  fetch(pathToBaseCharacterJson)
+    .then((response) => response.json)
+    .then((data) => {
+      //get the json data in localstorage or the local file then store it in variable jsonData
+      let jsonData = JSON.parse(localStorage.getItem("jsonData")) || data;
+      //then modify the data of the json stored in jsonData variable with the data in the input fields
+      jsonData.data_characters[index].currentlevel = 1;
+      // store the modified jsonData in localStorage
+      localStorage.setItem("jsonData", JSON.stringify(jsonData));
+      console.log("JSON data updated and stored in localStorage:", jsonData);
+    })
+    .catch((error) => console.error("Error updating JSON file:", error));
+}
