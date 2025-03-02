@@ -126,17 +126,19 @@ fetch(pathToBaseCharacterJson)
   })
   .catch((error) => console.error("Error loading JSON file:", error));
 
-function update(params) {
+function update() {
   fetch(pathToBaseCharacterJson)
     .then((response) => response.json)
     .then((data) => {
       //get the json data in localstorage or the local file then store it in variable jsonData
       let jsonData = JSON.parse(localStorage.getItem("jsonData")) || data;
-      //then modify the data of the json stored in jsonData variable with the data in the input fields
-      jsonData.data_characters[index].currentlevel = 1;
+      //then modify the data of the json stored in jsonData variable with the data in the input 
+      let valueLevelCurrent = inputLevelCurrent.value
+      jsonData.data_characters[0].currentLevel = valueLevelCurrent;
       // store the modified jsonData in localStorage
       localStorage.setItem("jsonData", JSON.stringify(jsonData));
-      console.log("JSON data updated and stored in localStorage:", jsonData);
+      console.log("JSON data updated and stored in localStorage:", jsonData );
+      console.log("current level updated in json:", valueLevelCurrent );
     })
     .catch((error) => console.error("Error updating JSON file:", error));
 }
