@@ -73,7 +73,6 @@ function loadJSON() {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
-
 /* var dataCharacters;
 fetch("data/character.json")
   .then((response) => response.json())
@@ -82,7 +81,6 @@ fetch("data/character.json")
     console.log(`fetch for variable : ${listOfCharacter}`);
   })
   .catch((error) => console.error("Error fetching data:", error)); */
-
 
 //Option 1: Use localStorage (Client-Side Only)
 
@@ -117,12 +115,24 @@ let pathToBaseCharacterJson = "data/character.json";
 fetch(pathToBaseCharacterJson)
   .then((response) => response.json())
   .then((data) => {
-    // Store it in a variable
+    // Store it in a variable variable to store data
+    let jsonData /*= JSON.parse(localStorage.getItem("jsonData")) || data*/;
 
-    let jsonData = JSON.parse(localStorage.getItem("jsonData")) || data;
+    /**
+     * verification if localstorage is empty use data from character.json file
+     * if not use data from localstorage
+     */
+    if (
+      localStorage.getItem("jsonData") == null ||
+      localStorage.getItem("jsonData") == undefined
+    ) {
+      jsonData = data;
+    } else {
+      jsonData = JSON.parse(localStorage.getItem("jsonData"));
+    }
     // Store the JSON data into localStorage
 
-    localStorage.setItem("jsonData", JSON.stringify(data));
+    localStorage.setItem("jsonData", JSON.stringify(jsonData));
 
     console.log("JSON data stored in localStorage:", jsonData);
   })
