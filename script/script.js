@@ -73,6 +73,7 @@ function loadJSON() {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
+
 /* var dataCharacters;
 fetch("data/character.json")
   .then((response) => response.json())
@@ -81,6 +82,7 @@ fetch("data/character.json")
     console.log(`fetch for variable : ${listOfCharacter}`);
   })
   .catch((error) => console.error("Error fetching data:", error)); */
+
 
 //Option 1: Use localStorage (Client-Side Only)
 
