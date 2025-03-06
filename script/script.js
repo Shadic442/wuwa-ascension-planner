@@ -106,6 +106,33 @@ localStorage.setItem("jsonData", JSON.stringify(jsonData));
 console.log(jsonData.data_characters[0].targetLevel);
 console.log("Updated JSON saved to localStorage:", jsonData); */
 
+function localstorageIsEmpty(key) {
+  /**
+   * verification if localstorage is empty use data from character.json file
+   * if not use data from localstorage
+   */
+  if (
+    localStorage.getItem(key) == null ||
+    localStorage.getItem(key) == undefined
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+  /**
+   * if (
+    localStorage.getItem(key) == null ||
+    localStorage.getItem(key) == undefined
+  ) {
+    jsonData = data;
+    return true;
+  } else {
+    jsonData = JSON.parse(localStorage.getItem(key));
+    return false;
+  }
+   */
+}
+let jsonDataKey = "jsonData";
 let pathToBaseCharacterJson = "data/character.json";
 /**
  * fetch to load the initial data of characters,
@@ -122,16 +149,23 @@ fetch(pathToBaseCharacterJson)
      * verification if localstorage is empty use data from character.json file
      * if not use data from localstorage
      */
-    if (
-      localStorage.getItem("jsonData") == null ||
-      localStorage.getItem("jsonData") == undefined
+    /*if (
+      localStorage.getItem(jsonDataKey) == null ||
+      localStorage.getItem(jsonDataKey) == undefined
     ) {
       jsonData = data;
     } else {
-      jsonData = JSON.parse(localStorage.getItem("jsonData"));
-    }
-    // Store the JSON data into localStorage
+      jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
+    }*/
 
+    if (localstorageIsEmpty(jsonDataKey)) {
+      // Store the JSON data into localStorage
+      jsonData = data;
+    } else {
+      jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
+    }
+
+    // Store the JSON data into localStorage
     localStorage.setItem("jsonData", JSON.stringify(jsonData));
 
     console.log("JSON data stored in localStorage:", jsonData);
