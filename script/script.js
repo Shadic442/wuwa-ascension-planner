@@ -119,18 +119,6 @@ function localstorageIsEmpty(key) {
   } else {
     return false;
   }
-  /**
-   * if (
-    localStorage.getItem(key) == null ||
-    localStorage.getItem(key) == undefined
-  ) {
-    jsonData = data;
-    return true;
-  } else {
-    jsonData = JSON.parse(localStorage.getItem(key));
-    return false;
-  }
-   */
 }
 let jsonDataKey = "jsonData";
 let pathToBaseCharacterJson = "data/character.json";
@@ -149,15 +137,6 @@ fetch(pathToBaseCharacterJson)
      * verification if localstorage is empty use data from character.json file
      * if not use data from localstorage
      */
-    /*if (
-      localStorage.getItem(jsonDataKey) == null ||
-      localStorage.getItem(jsonDataKey) == undefined
-    ) {
-      jsonData = data;
-    } else {
-      jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
-    }*/
-
     if (localstorageIsEmpty(jsonDataKey)) {
       // Store the JSON data into localStorage
       jsonData = data;
