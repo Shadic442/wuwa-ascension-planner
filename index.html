@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>wuthering waves ascension planner</title>
+
     <!-- Favicon for tab -->
     <link rel="icon" type="image/x-icon" href="/images/Chixia_Icon.webp" />
     <link
@@ -12,6 +13,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style/style.css" />
 
     <!-- <script type="text/javascript" src="data/character.json"></script> -->
   </head>
@@ -41,9 +43,21 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="resonatorModalLabel">
+            <!-- <h1 class="modal-title fs-5" id="resonatorModalLabel">
               Modal title
-            </h1>
+            </h1> -->
+            <div>
+              <form class="d-flex" role="search">
+                <!-- <img src="images/icons/icons8-search-50-black.png" alt="search_icon"> -->
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+            </div>
             <button
               type="button"
               class="btn-close"
@@ -51,7 +65,20 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <!-- start of list of characters -->
+            <!-- <div class="list-group"> -->
+            <button type="button" class="btn">
+              <img
+                src="images/Resonator/Charlotta/Carlotta_Icon.webp"
+                alt=""
+                width="48px"
+              />
+              Charlotta
+            </button>
+            <!-- </div> -->
+            <!-- end of list of characters -->
+          </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -67,22 +94,18 @@
     </div>
     <!-- end of Modal for resonator -->
 
-    <div>
-      <select name="characterList" id="dropdown">
-        <option value="">Resonators</option>
-      </select>
-    </div>
-
-    <!-- <form action="" name="calculate"> -->
-
     <label for="currentLevel">current Level</label>
-    <input
-      type="number"
-      min="1"
-      max="90"
-      id="currentLevel"
-      placeholder="current level"
-    />
+    <!-- <div class="input-group mb-3"> -->
+    <div class="col-auto">
+      <input
+        type="number"
+        min="1"
+        max="90"
+        id="currentLevel"
+        class="form-control"
+        placeholder="current level"
+      />
+    </div>
     <label for="targetLevel">target Level</label>
     <input
       type="number"

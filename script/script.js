@@ -6,10 +6,7 @@ function loadJSON() {
   fetch("data/character.json")
     .then((response) => response.json())
     .then((listOfCharacter) => {
-      
       nameTitle.innerHTML = listOfCharacter.data_characters[0].name;
-
-      
 
       /* console.log(listOfCharacter);
       console.log(
@@ -89,6 +86,8 @@ fetch(pathToBaseCharacterJson)
   })
   .catch((error) => console.error("Error loading JSON file:", error));
 
+let characterId = 0;
+// TODO: take a character id has parameter to update a specific character
 function update() {
   fetch(pathToBaseCharacterJson)
     .then((response) => response.json)
@@ -96,7 +95,7 @@ function update() {
       //get the json data in localstorage or the local file then store it in variable jsonData
       let jsonData = JSON.parse(localStorage.getItem("jsonData")) || data;
       //then modify the data of the json stored in jsonData variable with the data in the input
-      let characterId = 0;
+
       let valueLevelCurrent = inputLevelCurrent.value;
       let valueLevelTarget = inputLevelTarget.value;
       jsonData.data_characters[characterId].currentLevel = valueLevelCurrent;

@@ -1,0 +1,28 @@
+body {
+  background-color: black;
+  color: white;
+  
+}
+.modal-content {
+    background-color: gray ;
+ }
+
+ input[type=search] {
+  /* width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('images/icons/icons8-search-50-black.png');
+  background-position: 20px 20px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px; */
+
+
+  background-color: white;
+  background-image: url('searchicon.pimages/icons/icons8-search-50-black.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
