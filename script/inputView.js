@@ -1,12 +1,28 @@
 let nameTitle = document.getElementById("nameTitle");
+
 let inputLevelCurrent = document.getElementById("currentLevel");
 let inputLevelTarget = document.getElementById("targetLevel");
 let inputLevelResult = document.getElementById("resultLevel");
-let total = 0;
+
+let totalLevel = 0;
+
 let inputAscensionTarget = document.getElementById("targetAscension");
 let inputAscensionCurrent = document.getElementById("currentAscension");
 let inputAscensionResult = document.getElementById("resultAscension");
+
 let btnLevel10 = document.getElementById("btnLevel10");
+
+let inputLevelCurrentBasicAttack = document.getElementById(
+  "currentBasicAttackLevel"
+);
+let inputLevelTargetBasicAttack = document.getElementById(
+  "targetBasicAttackLevel"
+);
+let inputLevelResultBasicAttack = document.getElementById(
+  "resultBasicAttackLevel"
+);
+
+let totalBasicAttackLevel = 0;
 
 btnLevel10.onclick = function name(params) {
   inputLevelTarget.value = btnLevel10.value;
@@ -22,8 +38,9 @@ function calculateLevel() {
     inputLevelCurrent.value = 1;
     inputLevelTarget.value = 1;
   }
-  total = parseInt(inputLevelTarget.value) - parseInt(inputLevelCurrent.value);
-  inputLevelResult.value = total;
+  totalLevel =
+    parseInt(inputLevelTarget.value) - parseInt(inputLevelCurrent.value);
+  inputLevelResult.value = totalLevel;
 
   inputAscensionTarget.value = calculateAscension(inputLevelTarget.value);
   inputAscensionCurrent.value = calculateAscension(inputLevelCurrent.value);
@@ -55,4 +72,34 @@ function calculateAscension(level) {
   }
   console.log(ascensionLevel);
   return ascensionLevel;
+}
+
+/** calculate characters basic attacks levels */
+function calculateLevelBasicAttack() {
+  if (
+    inputLevelCurrentBasicAttack.value == null ||
+    inputLevelTargetBasicAttack.value == null ||
+    inputLevelCurrentBasicAttack.value == 0 ||
+    inputLevelTargetBasicAttack.value == 0
+  ) {
+    inputLevelCurrentBasicAttack.value = 1;
+    inputLevelTargetBasicAttack.value = 1;
+  }
+  totalBasicAttackLevel =
+    parseInt(inputLevelTargetBasicAttack.value) -
+    parseInt(inputLevelCurrentBasicAttack.value);
+  inputLevelResultBasicAttack.value = totalBasicAttackLevel;
+
+  /* console.log(
+    `target Ascension level : ${calculateAscension(targetLevelInput.value)}`
+  );
+  console.log(
+    `current Ascension level : ${calculateAscension(currentLevelInput.value)}`
+  ); */
+}
+
+/** Calculate all characters stats levels */
+function calculate() {
+  calculateLevel();
+  calculateLevelBasicAttack();
 }

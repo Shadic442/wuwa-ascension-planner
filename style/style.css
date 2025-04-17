@@ -1,11 +1,15 @@
 body {
   background-color: black;
   color: white;
-  
 }
 .modal-content {
     background-color: gray ;
  }
+
+ .form-floating{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: gray;
+  /* opacity: 1; Firefox */
+}
 
  input[type=search] {
   /* width: 100%;
