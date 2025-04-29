@@ -107,3 +107,39 @@ function update() {
     })
     .catch((error) => console.error("Error updating JSON file:", error));
 }
+
+/* populate character llist modal with the characters from the character.json file */
+function getCharacterList(jsonData) {
+  let listContent;
+  //jsonData.data_characters.length;
+  /* for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+  } */
+
+  for (let index = 0; index < jsonData.data_characters.length; index++) {
+    jsonData.data_characters[index].id;
+    jsonData.data_characters[index].name;
+    jsonData.data_characters[index].characterImageIcon;
+    listContent = ``;
+  }
+
+  <div class="d-grid gap-2">
+    <button type="button" class="btn" id="0">
+      <img
+        src="images/Resonator/Charlotta/Carlotta_Icon.webp"
+        alt=""
+        width="48px"
+      />
+      Charlotta
+    </button>
+  </div>;
+
+  $("#characterListEntry").html(listContent);
+}
+
+function showCharacterList() {
+  const url = pathToBaseCharacterJson;
+  fetch(url)
+    .then((response) => response.json())
+    .then((jsonData) => showCharacterList(jsonData));
+}

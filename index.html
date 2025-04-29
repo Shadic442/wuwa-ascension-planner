@@ -68,6 +68,7 @@
             ></button>
           </div>
           <div class="modal-body">
+
             <!-- start of list of characters -->
             <div class="d-grid gap-2">
               <button type="button" class="btn" id="0">
@@ -80,6 +81,7 @@
               </button>
             </div>
             <!-- end of list of characters -->
+             
           </div>
           <div class="modal-footer">
             <button
@@ -94,6 +96,9 @@
         </div>
       </div>
     </div>
+
+    <div id="characterListEntry"></div>
+
     <!-- end of Modal for resonator -->
     <div class="row g-2">
       <div class="col-md">
@@ -207,11 +212,54 @@
         placeholder="result Normal Attack Level"
       />
     </div>
-    <div><p>resonance skill : </p></div>
-    <div><p>forte circuit : </p></div>
-    <div><p>resonance liberation : </p></div>
-    <div><p>intro skill : </p></div>
-    <button type="button" class="btn btn-primary" onclick="calculate()">
+
+    <div>
+      <p>resonance skill :</p>
+      <div class="row g-2">
+        <div class="col-md">
+          <div class="form-floating">
+            <input
+              type="number"
+              min="1"
+              max="10"
+              id="currentskillLevel"
+              class="form-control"
+              placeholder="current skill Level"
+            />
+            <label for="currentskillLevel">current skill Level</label>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class="form-floating">
+            <input
+              type="number"
+              min="1"
+              max="10"
+              id="targetSkillLevel"
+              class="form-control"
+              placeholder="target skill Level"
+            />
+            <label for="targetSkillLevel">target skill Level</label>
+          </div>
+        </div>
+      </div>
+
+      <label for="resultBasicAttackLevel">result target Level</label>
+      <input
+        type="number"
+        id="resultTargetLevel"
+        placeholder="result target Level"
+      />
+    </div>
+
+    <div><p>forte circuit :</p></div>
+
+    <div><p>resonance liberation :</p></div>
+
+    <div><p>intro skill :</p></div>
+
+    <button type="button" class="btn btn-primary" id="btnCalculateMats" onclick="calculate()">
       calculate
     </button>
     <button type="button" class="btn btn-primary" onclick="update()">

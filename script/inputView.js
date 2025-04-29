@@ -45,14 +45,24 @@ function calculateLevel() {
   inputAscensionTarget.value = calculateAscension(inputLevelTarget.value);
   inputAscensionCurrent.value = calculateAscension(inputLevelCurrent.value);
 
-  /* console.log(
-    `target Ascension level : ${calculateAscension(targetLevelInput.value)}`
+  console.log("%c calculating levels", "color:orange;font-weight:bold");
+  console.log(
+    `target level : ${inputLevelTarget.value}`
   );
   console.log(
-    `current Ascension level : ${calculateAscension(currentLevelInput.value)}`
-  ); */
+    `current level : ${inputLevelCurrent.value}`
+  );
+
+  console.log("%c calculating ascension Levels", "color:orange;font-weight:bold");
+  console.log(
+    `target Ascension level : ${calculateAscension(inputLevelTarget.value)}`
+  );
+  console.log(
+    `current Ascension level : ${calculateAscension(inputLevelCurrent.value)}`
+  );
 }
 
+/* asing ascension levels based the level's range */
 function calculateAscension(level) {
   let ascensionLevel = 0;
   if (level >= 1 && level <= 20) {
@@ -70,7 +80,8 @@ function calculateAscension(level) {
   } else if (level > 80 && level <= 90) {
     ascensionLevel = 6;
   }
-  console.log(ascensionLevel);
+  /* console.log("%c calculating ascension Levels", "color:orange;font-weight:bold");
+  console.log(ascensionLevel); */
   return ascensionLevel;
 }
 
@@ -90,12 +101,16 @@ function calculateLevelBasicAttack() {
     parseInt(inputLevelCurrentBasicAttack.value);
   inputLevelResultBasicAttack.value = totalBasicAttackLevel;
 
-  /* console.log(
-    `target Ascension level : ${calculateAscension(targetLevelInput.value)}`
+  console.log(
+    "%c calculating Basic Attack level",
+    "color:orange;font-weight:bold"
   );
   console.log(
-    `current Ascension level : ${calculateAscension(currentLevelInput.value)}`
-  ); */
+    `target Basic Attack level : ${inputLevelTargetBasicAttack.value}`
+  );
+  console.log(
+    `current Basic Attack level : ${inputLevelCurrentBasicAttack.value}`
+  );
 }
 
 /** Calculate all characters stats levels */
