@@ -121,9 +121,6 @@ function getCharacterList(jsonData) {
   }
 
   for (let index = 0; index < jsonData.data_characters.length; index++) {
-    /* jsonData.data_characters[index].id;
-    jsonData.data_characters[index].name;
-    jsonData.data_characters[index].characterImageIcon; */
     listContent = `<div class="d-grid gap-2">
     <button type="button" class="btn" id="${jsonData.data_characters[index].id}">
       <img

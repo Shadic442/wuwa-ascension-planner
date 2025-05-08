@@ -1,25 +1,25 @@
 let nameTitle = document.getElementById("nameTitle");
 
-let inputLevelCurrent = document.getElementById("currentLevel");
-let inputLevelTarget = document.getElementById("targetLevel");
-let inputLevelResult = document.getElementById("resultLevel");
+let inputLevelCurrent = document.getElementById("current-level");
+let inputLevelTarget = document.getElementById("target-level");
+let inputLevelResult = document.getElementById("result-level");
 
 let totalLevel = 0;
 
-let inputAscensionTarget = document.getElementById("targetAscension");
-let inputAscensionCurrent = document.getElementById("currentAscension");
-let inputAscensionResult = document.getElementById("resultAscension");
+let inputAscensionTarget = document.getElementById("target-ascension");
+let inputAscensionCurrent = document.getElementById("current-ascension");
+let inputAscensionResult = document.getElementById("result-ascension");
 
 let btnLevel10 = document.getElementById("btnLevel10");
 
 let inputLevelCurrentBasicAttack = document.getElementById(
-  "currentBasicAttackLevel"
+  "current-basic-attack-level"
 );
 let inputLevelTargetBasicAttack = document.getElementById(
-  "targetBasicAttackLevel"
+  "target-basic-attack-level"
 );
 let inputLevelResultBasicAttack = document.getElementById(
-  "resultBasicAttackLevel"
+  "result-basic-attack-level"
 );
 
 let totalBasicAttackLevel = 0;
@@ -46,14 +46,13 @@ function calculateLevel() {
   inputAscensionCurrent.value = calculateAscension(inputLevelCurrent.value);
 
   console.log("%c calculating levels", "color:orange;font-weight:bold");
-  console.log(
-    `target level : ${inputLevelTarget.value}`
-  );
-  console.log(
-    `current level : ${inputLevelCurrent.value}`
-  );
+  console.log(`target level : ${inputLevelTarget.value}`);
+  console.log(`current level : ${inputLevelCurrent.value}`);
 
-  console.log("%c calculating ascension Levels", "color:orange;font-weight:bold");
+  console.log(
+    "%c calculating ascension Levels",
+    "color:orange;font-weight:bold"
+  );
   console.log(
     `target Ascension level : ${calculateAscension(inputLevelTarget.value)}`
   );
