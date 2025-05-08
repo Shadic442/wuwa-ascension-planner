@@ -1,5 +1,6 @@
 window.onload = function () {
   /* loadJSON(); */
+  showCharacterList();
 };
 
 function loadJSON() {
@@ -110,36 +111,32 @@ function update() {
 
 /* populate character llist modal with the characters from the character.json file */
 function getCharacterList(jsonData) {
-  let listContent;
-  //jsonData.data_characters.length;
-  /* for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-  } */
+  let listContent = "";
 
-  for (let index = 0; index < jsonData.data_characters.length; index++) {
-    jsonData.data_characters[index].id;
-    jsonData.data_characters[index].name;
-    jsonData.data_characters[index].characterImageIcon;
-    listContent = ``;
+  if (localstorageIsEmpty(jsonDataKey)) {
+    // Store the JSON data into localStorage
+    jsonData = data;
+  } else {
+    jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
   }
 
-  <div class="d-grid gap-2">
-    <button type="button" class="btn" id="0">
+  for (let index = 0; index < jsonData.data_characters.length; index++) {
+    /* jsonData.data_characters[index].id;
+    jsonData.data_characters[index].name;
+    jsonData.data_characters[index].characterImageIcon; */
+    listContent = `<div class="d-grid gap-2">
+    <button type="button" class="btn" id="${jsonData.data_characters[index].id}">
       <img
-        src="images/Resonator/Charlotta/Carlotta_Icon.webp"
-        alt=""
+        src=${jsonData.data_characters[index].characterImageIcon}
+        alt="Carlotta_Icon"
         width="48px"
       />
-      Charlotta
+      ${jsonData.data_characters[index].name}
     </button>
-  </div>;
+  </div>`;
 
+    console.log("%c list value", "color:orange;font-weight:bold");
+    console.log(`name : ${jsonData.data_characters[index].name}`);
+  }
   $("#characterListEntry").html(listContent);
-}
-
-function showCharacterList() {
-  const url = pathToBaseCharacterJson;
-  fetch(url)
-    .then((response) => response.json())
-    .then((jsonData) => showCharacterList(jsonData));
 }
