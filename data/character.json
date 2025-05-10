@@ -3,18 +3,42 @@
     {
       "id": 1,
       "name": "Carlotta",
-      "characterImage":"img_path",
-      "characterImageIcon":"images/Resonator/Charlotta/Carlotta_Icon.webp",
+      "characterImage": "img_path",
+      "characterImageIcon": "images/Resonator/Charlotta/Carlotta_Icon.webp",
       "currentLevel": 0,
       "targetLevel": 0,
       "currentAscension": 0,
       "targetAscension": 0,
-      "skills": {
-        "normalAttack": {
-          "currentSkillLevel": 0,
-          "targetSkillLevel": 0
+      "skills": [
+        {
+          "normalAttack": {
+            "currentSkillLevel": 0,
+            "targetSkillLevel": 0
+          }
         }
-      },
+      ],
+      "resonanceChain": {
+        "nameNode": 0
+      }
+    },
+
+    {
+      "id": 0,
+      "name": "Carlotta",
+      "characterImage": "img_path",
+      "characterImageIcon": "images/Resonator/Charlotta/Carlotta_Icon.webp",
+      "currentLevel": 0,
+      "targetLevel": 0,
+      "currentAscension": 0,
+      "targetAscension": 0,
+      "skills": [
+        {
+          "normalAttack": {
+            "currentSkillLevel": 0,
+            "targetSkillLevel": 0
+          }
+        }
+      ],
       "resonanceChain": {
         "nameNode": 0
       }

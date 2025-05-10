@@ -120,8 +120,25 @@ function getCharacterList(jsonData) {
     jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
   }
 
-  for (let index = 0; index < jsonData.data_characters.length; index++) {
-    listContent = `<div class="d-grid gap-2">
+  jsonData.data_characters.forEach(element => {
+    listContent += `<div class="d-grid gap-2">
+    <button type="button" class="btn" id="${element.id}">
+      <img
+        src=${element.characterImageIcon}
+        alt="Carlotta_Icon"
+        width="48px"
+      />
+      ${element.name}
+    </button>
+  </div>`;
+
+    console.log("%c list value", "color:orange;font-weight:bold");
+    console.log(`name : ${element.name}`);
+    
+  });
+
+  /* for (let index = 0; index < jsonData.data_characters.length; index++) {
+    listContent += `<div class="d-grid gap-2">
     <button type="button" class="btn" id="${jsonData.data_characters[index].id}">
       <img
         src=${jsonData.data_characters[index].characterImageIcon}
@@ -134,6 +151,7 @@ function getCharacterList(jsonData) {
 
     console.log("%c list value", "color:orange;font-weight:bold");
     console.log(`name : ${jsonData.data_characters[index].name}`);
-  }
+  } */
+
   $("#characterListEntry").html(listContent);
 }
