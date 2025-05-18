@@ -41,11 +41,11 @@ localStorage.setItem("jsonData", JSON.stringify(jsonData));
 console.log(jsonData.data_characters[0].targetLevel);
 console.log("Updated JSON saved to localStorage:", jsonData); */
 
-function localstorageIsEmpty(key) {
-  /**
+/**
    * verification if localstorage is empty use data from character.json file
    * if not use data from localstorage
    */
+function localstorageIsEmpty(key) {
   if (
     localStorage.getItem(key) == null ||
     localStorage.getItem(key) == undefined
@@ -95,14 +95,16 @@ function update() {
     .then((data) => {
       //get the json data in localstorage or the local file then store it in variable jsonData
       let jsonData = JSON.parse(localStorage.getItem("jsonData")) || data;
-      //then modify the data of the json stored in jsonData variable with the data in the input
 
+      //then modify the data of the json stored in jsonData variable with the data in the input
       let valueLevelCurrent = inputLevelCurrent.value;
       let valueLevelTarget = inputLevelTarget.value;
       jsonData.data_characters[characterId].currentLevel = valueLevelCurrent;
       jsonData.data_characters[characterId].targetLevel = valueLevelTarget;
       // store the modified jsonData in localStorage
       localStorage.setItem("jsonData", JSON.stringify(jsonData));
+
+      console.log("%c update button :", "color:orange;font-weight:bold");
       console.log("JSON data updated and stored in localStorage:", jsonData);
       console.log("current level updated in json:", valueLevelCurrent);
     })
@@ -120,21 +122,20 @@ function getCharacterList(jsonData) {
     jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
   }
 
-  jsonData.data_characters.forEach(element => {
+  jsonData.data_characters.forEach((a_Character) => {
     listContent += `<div class="d-grid gap-2">
-    <button type="button" class="btn" id="${element.id}">
+    <button type="button" class="btn" id="${a_Character.id}">
       <img
-        src=${element.characterImageIcon}
+        src=${a_Character.characterImageIcon}
         alt="Carlotta_Icon"
         width="48px"
       />
-      ${element.name}
+      ${a_Character.name}
     </button>
   </div>`;
 
-    console.log("%c list value", "color:orange;font-weight:bold");
-    console.log(`name : ${element.name}`);
-    
+    console.log("%c list character buttons :", "color:orange;font-weight:bold");
+    console.log(`name : ${a_Character.name}`);
   });
 
   /* for (let index = 0; index < jsonData.data_characters.length; index++) {

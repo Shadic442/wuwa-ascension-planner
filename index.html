@@ -27,6 +27,7 @@
     >
       Add Resonator Btn
     </button>
+
     <a class="btn btn-primary mb-3" href="#" role="button"
       >Add Resonator Link</a
     >
@@ -100,7 +101,8 @@
 
     <!-- start of level input -->
     <div>
-      <div class="row g-2">
+      <p>character level :</p>
+      <div class="row row-cols-2 g-2">
         <div class="col-md">
           <div class="form-floating mb-3">
             <input
@@ -130,7 +132,7 @@
         </div>
       </div>
 
-      <div><button id="btnLevel10" value="10">10</button></div>
+      <div><button type="button" class="btn btn-primary" id="btnLevel10" value="10">10</button></div>
       <label for="result-level">result Level</label>
       <input type="number" id="result-level" placeholder="result level" />
     </div>
@@ -138,7 +140,8 @@
 
     <!-- start of ascension input -->
     <div>
-      <div class="row g-2">
+      <p>ascension level :</p>
+      <div class="row row-cols-2 g-2">
         <div class="col-md">
           <div class="form-floating mb-3">
             <input
@@ -164,21 +167,21 @@
             /><label for="target-ascension">target Ascension</label>
           </div>
         </div>
-
-        <label for="result-ascension">result Ascension</label>
-        <input
-          type="number"
-          id="result-ascension"
-          placeholder="result Ascension"
-        />
       </div>
+
+      <label for="result-ascension">result Ascension</label>
+      <input
+        type="number"
+        id="result-ascension"
+        placeholder="result Ascension"
+      />
     </div>
     <!-- end of ascension input -->
 
     <!-- start of basic normal attack input -->
     <div>
       <p>basic normal attack :</p>
-      <div class="row g-2">
+      <div class="row row-cols-2 g-2">
         <div class="col-md">
           <div class="form-floating">
             <input
@@ -224,7 +227,7 @@
     <!-- start of resonance skill input -->
     <div>
       <p>resonance skill :</p>
-      <div class="row g-2">
+      <div class="row row-cols-2 g-2">
         <div class="col-md">
           <div class="form-floating">
             <input
@@ -272,7 +275,7 @@
     <!-- start of forte circuit input -->
     <div>
       <p>forte circuit :</p>
-      <div class="row g-2">
+      <div class="row row-cols-2 g-2">
         <div class="col-md">
           <div class="form-floating">
             <input
@@ -320,7 +323,7 @@
     <!-- start of resonance liberation input -->
     <div>
       <p>resonance liberation :</p>
-      <div class="row g-2">
+      <div class="row row-cols-2 g-2">
         <div class="col-md">
           <div class="form-floating">
             <input
@@ -368,7 +371,7 @@
     <!-- start of intro skill input -->
     <div>
       <p>intro skill :</p>
-      <div class="row g-2">
+      <div class="row row-cols-2 g-2">
         <div class="col-md">
           <div class="form-floating">
             <input
@@ -428,8 +431,9 @@
 </html>
 
 <script src="script/controller.js"></script>
-<script src="script/inputView.js"></script>
+<script src="script/calculate.js"></script>
 <script src="script/view.js"></script>
+<script src="script/validate.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
