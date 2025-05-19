@@ -164,36 +164,6 @@ function calculateLevelResonanceSkill(current, target) {
   console.log(`total resonance skill level up : ${totalBasicAttackLevel}`);
 }
 
-// function calculateLevelResonanceSkill() {
-//   /* if (
-//     inputLevelCurrentResonanceSkill.value == null ||
-//     inputLevelTargetResonanceSkill.value == null ||
-//     inputLevelCurrentResonanceSkill.value == 0 ||
-//     inputLevelTargetResonanceSkill.value == 0
-//   ) {
-//     inputLevelCurrentResonanceSkill.value = 1;
-//     inputLevelTargetResonanceSkill.value = 1;
-//   } */
-
-//   inputIsEmpy(inputLevelCurrentResonanceSkill, inputLevelTargetResonanceSkill);
-
-//   totalBasicAttackLevel =
-//     parseInt(inputLevelTargetResonanceSkill.value) -
-//     parseInt(inputLevelCurrentResonanceSkill.value);
-//   inputLevelResultBasicAttack.value = totalBasicAttackLevel;
-
-//   console.log(
-//     "%c calculating resonance skill level",
-//     "color:orange;font-weight:bold"
-//   );
-//   console.log(
-//     `current resonance skill level : ${inputLevelCurrentResonanceSkill.value}`
-//   );
-//   console.log(
-//     `target resonance skill level : ${inputLevelTargetResonanceSkill.value}`
-//   );
-// }
-
 /** calculate characters Forte Circuit levels */
 function calculateLevelForteCircuit(current, target) {
   inputIsEmpty(current, target);
