@@ -1,6 +1,6 @@
 /*  if the input fields are empty their values are set to 1
  based on the current and target level received has parameter */
-function inputIsEmpy(inputCurrent, inputTarget) {
+function inputIsEmpty(inputCurrent, inputTarget) {
   if (
     inputCurrent.value == null ||
     inputTarget.value == null ||
