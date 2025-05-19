@@ -18,6 +18,8 @@ let inputAscensionCurrent = document.getElementById("current-ascension");
 let inputAscensionTarget = document.getElementById("target-ascension");
 let inputAscensionResult = document.getElementById("result-ascension");
 
+let totalResultAscensionLevel = 0;
+
 // input for basic attack level
 let inputLevelCurrentBasicAttack = document.getElementById(
   "current-basic-attack-level"
@@ -29,7 +31,7 @@ let inputLevelResultBasicAttack = document.getElementById(
   "result-basic-attack-level"
 );
 
-let totalBasicAttackLevel = 0;
+let totalResultBasicAttackLevel = 0;
 
 // input for resonance skill level
 let inputLevelCurrentResonanceSkill = document.getElementById(
@@ -83,7 +85,7 @@ let inputLevelResultIntroSkill = document.getElementById(
 
 let totalResultIntroSkillLevel = 0;
 
-/** calculate characters levels */
+/** calculate characters levels and ascension level */
 function calculateLevel(current, target) {
   inputIsEmpty(current, target);
 
@@ -92,6 +94,7 @@ function calculateLevel(current, target) {
 
   inputAscensionTarget.value = calculateAscension(target.value);
   inputAscensionCurrent.value = calculateAscension(current.value);
+  inputAscensionResult.value = calculateAscension(target.value) - calculateAscension(current.value);
 
   console.log("%c calculating levels", "color:orange;font-weight:bold");
   console.log(`target charcater level : ${target.value}`);
@@ -134,8 +137,8 @@ function calculateAscension(level) {
 function calculateLevelBasicAttack(current, target) {
   inputIsEmpty(current, target);
 
-  totalBasicAttackLevel = parseInt(target.value) - parseInt(current.value);
-  inputLevelResultBasicAttack.value = totalBasicAttackLevel;
+  totalResultBasicAttackLevel = parseInt(target.value) - parseInt(current.value);
+  inputLevelResultBasicAttack.value = totalResultBasicAttackLevel;
 
   console.log(
     "%c calculating Basic Attack level",
@@ -143,17 +146,17 @@ function calculateLevelBasicAttack(current, target) {
   );
   console.log(`current Basic Attack level : ${current.value}`);
   console.log(`target Basic Attack level : ${target.value}`);
-  console.log(`total Basic Attack level up : ${totalBasicAttackLevel}`);
+  console.log(`total Basic Attack level up : ${totalResultBasicAttackLevel}`);
 
-  return totalBasicAttackLevel;
+  return totalResultBasicAttackLevel;
 }
 
 /** calculate characters resonance skill levels */
 function calculateLevelResonanceSkill(current, target) {
   inputIsEmpty(current, target);
 
-  totalBasicAttackLevel = parseInt(target.value) - parseInt(current.value);
-  inputLevelResultBasicAttack.value = totalBasicAttackLevel;
+  totalResultResonanceSkillLevel = parseInt(target.value) - parseInt(current.value);
+  inputLevelResultResonanceSkill.value = totalResultResonanceSkillLevel;
 
   console.log(
     "%c calculating resonance skill level",
@@ -161,7 +164,7 @@ function calculateLevelResonanceSkill(current, target) {
   );
   console.log(`current resonance skill level : ${current.value}`);
   console.log(`target resonance skill level : ${target.value}`);
-  console.log(`total resonance skill level up : ${totalBasicAttackLevel}`);
+  console.log(`total resonance skill level up : ${totalResultResonanceSkillLevel}`);
 }
 
 /** calculate characters Forte Circuit levels */
