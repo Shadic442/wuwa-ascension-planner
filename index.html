@@ -28,9 +28,6 @@
       Add Resonator Btn
     </button>
 
-    <a class="btn btn-primary mb-3" href="#" role="button"
-      >Add Resonator Link</a
-    >
     <!-- end of button trigger modal -->
 
     <!-- start of Modal for resonator -->
@@ -104,35 +101,50 @@
       <p>character level :</p>
       <div class="row row-cols-2 g-2">
         <div class="col-md">
-          <div class="form-floating mb-3">
-            <input
-              type="number"
-              min="1"
-              max="90"
-              id="current-level"
-              class="form-control"
-              placeholder="current level"
-            />
-            <label for="current-level">current Level</label>
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="90"
+                id="current-level"
+                class="form-control"
+                placeholder="current level"
+              />
+              <label for="current-level">current Level</label>
+            </div>
+            <span class="input-group-text">/90</span>
           </div>
         </div>
 
         <div class="col-md">
-          <div class="form-floating mb-3">
-            <input
-              type="number"
-              min="1"
-              max="90"
-              id="target-level"
-              class="form-control"
-              placeholder="target level"
-            />
-            <label for="target-level">target Level</label>
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="90"
+                id="target-level"
+                class="form-control"
+                placeholder="target level"
+              />
+              <label for="target-level">target Level</label>
+            </div>
+            <span class="input-group-text">/90</span>
           </div>
         </div>
       </div>
 
-      <div><button type="button" class="btn btn-primary" id="btnLevel10" value="10">10</button></div>
+      <div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="btnLevel10"
+          value="10"
+        >
+          10
+        </button>
+      </div>
       <label for="result-level">result Level</label>
       <input type="number" id="result-level" placeholder="result level" />
     </div>
@@ -143,28 +155,34 @@
       <p>ascension level :</p>
       <div class="row row-cols-2 g-2">
         <div class="col-md">
-          <div class="form-floating mb-3">
-            <input
-              type="number"
-              min="0"
-              max="6"
-              id="current-ascension"
-              class="form-control"
-              placeholder="current Ascension"
-            /><label for="current-ascension">current Ascension</label>
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="0"
+                max="6"
+                id="current-ascension"
+                class="form-control"
+                placeholder="current Ascension"
+              /><label for="current-ascension">current Ascension</label>
+            </div>
+            <span class="input-group-text">/6</span>
           </div>
         </div>
 
         <div class="col-md">
-          <div class="form-floating mb-3">
-            <input
-              type="number"
-              min="0"
-              max="6"
-              id="target-ascension"
-              class="form-control"
-              placeholder="target Ascension"
-            /><label for="target-ascension">target Ascension</label>
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="0"
+                max="6"
+                id="target-ascension"
+                class="form-control"
+                placeholder="target Ascension"
+              /><label for="target-ascension">target Ascension</label>
+            </div>
+            <span class="input-group-text">/6</span>
           </div>
         </div>
       </div>
@@ -183,34 +201,40 @@
       <p>basic normal attack :</p>
       <div class="row row-cols-2 g-2">
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="current-basic-attack-level"
-              class="form-control"
-              placeholder="current Normal Attack Level"
-            />
-            <label for="current-basic-attack-level"
-              >current Basic Attack Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="current-basic-attack-level"
+                class="form-control"
+                placeholder="current Normal Attack Level"
+              />
+              <label for="current-basic-attack-level"
+                >current Basic Attack Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
 
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="target-basic-attack-level"
-              class="form-control"
-              placeholder="target Normal Attack Level"
-            />
-            <label for="target-basic-attack-level"
-              >target Basic Attack Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="target-basic-attack-level"
+                class="form-control"
+                placeholder="target Normal Attack Level"
+              />
+              <label for="target-basic-attack-level"
+                >target Basic Attack Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
       </div>
@@ -229,34 +253,40 @@
       <p>resonance skill :</p>
       <div class="row row-cols-2 g-2">
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="current-resonance-skill-level"
-              class="form-control"
-              placeholder="current resonance skill Level"
-            />
-            <label for="current-resonance-skill-level"
-              >current resonance skill Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="current-resonance-skill-level"
+                class="form-control"
+                placeholder="current resonance skill Level"
+              />
+              <label for="current-resonance-skill-level"
+                >current resonance skill Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
 
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="target-resonance-skill-level"
-              class="form-control"
-              placeholder="target resonance skill Level"
-            />
-            <label for="target-resonance-skill-level"
-              >target resonance skill Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="target-resonance-skill-level"
+                class="form-control"
+                placeholder="target resonance skill Level"
+              />
+              <label for="target-resonance-skill-level"
+                >target resonance skill Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
       </div>
@@ -277,34 +307,40 @@
       <p>forte circuit :</p>
       <div class="row row-cols-2 g-2">
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="current-forte-circuit-level"
-              class="form-control"
-              placeholder="current forte circuit Level"
-            />
-            <label for="current-forte-circuit-level"
-              >current forte circuit Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="current-forte-circuit-level"
+                class="form-control"
+                placeholder="current forte circuit Level"
+              />
+              <label for="current-forte-circuit-level"
+                >current forte circuit Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
 
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="target-forte-circuit-level"
-              class="form-control"
-              placeholder="target forte circuit Level"
-            />
-            <label for="target-forte-circuit-level"
-              >target forte circuit Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="target-forte-circuit-level"
+                class="form-control"
+                placeholder="target forte circuit Level"
+              />
+              <label for="target-forte-circuit-level"
+                >target forte circuit Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
       </div>
@@ -325,34 +361,40 @@
       <p>resonance liberation :</p>
       <div class="row row-cols-2 g-2">
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="current-resonance-liberation-level"
-              class="form-control"
-              placeholder="current forte circuit Level"
-            />
-            <label for="current-resonance-liberation-level"
-              >current resonance liberation Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="current-resonance-liberation-level"
+                class="form-control"
+                placeholder="current forte circuit Level"
+              />
+              <label for="current-resonance-liberation-level"
+                >current resonance liberation Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
 
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="target-resonance-liberation-level"
-              class="form-control"
-              placeholder="target resonance liberation Level"
-            />
-            <label for="target-resonance-liberation-level"
-              >target resonance liberation Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="target-resonance-liberation-level"
+                class="form-control"
+                placeholder="target resonance liberation Level"
+              />
+              <label for="target-resonance-liberation-level"
+                >target resonance liberation Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
       </div>
@@ -373,34 +415,40 @@
       <p>intro skill :</p>
       <div class="row row-cols-2 g-2">
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="current-intro-skill-level"
-              class="form-control"
-              placeholder="current intro skill Level"
-            />
-            <label for="current-intro-skill-level"
-              >current intro skill Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="current-intro-skill-level"
+                class="form-control"
+                placeholder="current intro skill Level"
+              />
+              <label for="current-intro-skill-level"
+                >current intro skill Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
 
         <div class="col-md">
-          <div class="form-floating">
-            <input
-              type="number"
-              min="1"
-              max="10"
-              id="target-intro-skill-level"
-              class="form-control"
-              placeholder="target intro skill Level"
-            />
-            <label for="target-intro-skill-level"
-              >target intro skill Level</label
-            >
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input
+                type="number"
+                min="1"
+                max="10"
+                id="target-intro-skill-level"
+                class="form-control"
+                placeholder="target intro skill Level"
+              />
+              <label for="target-intro-skill-level"
+                >target intro skill Level</label
+              >
+            </div>
+            <span class="input-group-text">/10</span>
           </div>
         </div>
       </div>
@@ -427,6 +475,45 @@
     <button type="button" class="btn btn-primary" onclick="update()">
       update
     </button>
+
+    <!-- start of Modal for calculation -->
+    <div
+      class="modal fade"
+      id="modlaCalculate"
+      tabindex="-1"
+      aria-labelledby="modlaCalculateLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modlaCalculateLabel">
+              Modal title
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- start of calculation input -->
+          <div class="modal-body">...</div>
+          <!-- end of calculation input -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of Modal -->
   </body>
 </html>
 

@@ -124,7 +124,7 @@ function getCharacterList(jsonData) {
 
   jsonData.data_characters.forEach((a_Character) => {
     listContent += `<div class="d-grid gap-2">
-    <button type="button" class="btn" id="${a_Character.id}">
+    <button type="button" class="btn" id="${a_Character.id}" data-bs-toggle="modal" data-bs-target="#modlaCalculate">
       <img
         src=${a_Character.characterImageIcon}
         alt="Carlotta_Icon"

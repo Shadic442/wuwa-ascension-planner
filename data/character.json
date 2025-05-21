@@ -2,7 +2,7 @@
   "data_characters": [
     {
       "id": 1,
-      "name": "Carlotta",
+      "name": "Charlotta",
       "characterImage": "img_path",
       "characterImageIcon": "images/Resonator/Charlotta/Carlotta_Icon.webp",
       "currentLevel": 0,
@@ -24,7 +24,7 @@
 
     {
       "id": 0,
-      "name": "Carlotta",
+      "name": "Charlotta",
       "characterImage": "img_path",
       "characterImageIcon": "images/Resonator/Charlotta/Carlotta_Icon.webp",
       "currentLevel": 0,
