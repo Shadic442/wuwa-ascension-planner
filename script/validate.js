@@ -9,10 +9,33 @@ function inputIsEmpty(inputCurrent, inputTarget) {
   ) {
     inputCurrent.value = 1;
     inputTarget.value = 1;
-    return true;
+    //return true;
+  } /* else if (inputCurrent.value < inputCurrent.min) {
+    inputCurrent.value = inputCurrent.min;
+  } else if (inputCurrent.value > inputCurrent.max) {
+    inputCurrent.value = inputCurrent.max;
+  } else if (inputTarget.value < inputTarget.min) {
+    inputTarget.value = inputTarget.min;
+  } else if (inputTarget.value > inputTarget.max) {
+    inputTarget.value = inputTarget.max;
+  } */ else if (inputCurrent.value > inputTarget.value) {
+    inputCurrent.value = inputTarget.value;
   }
 
-  return false;
+  //return false;
+}
+
+/* validate if value of input is within min and max range of the html input tag
+if not replace value with min or max value */
+function enforceMinMax(inputValue) {
+  if (inputValue.value != "") {
+    if (parseInt(inputValue.value) < parseInt(inputValue.min)) {
+      inputValue.value = inputValue.min;
+    }
+    if (parseInt(inputValue.value) > parseInt(inputValue.max)) {
+      inputValue.value = inputValue.max;
+    }
+  }
 }
 
 function validateInputs() {

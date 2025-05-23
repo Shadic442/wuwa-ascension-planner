@@ -2,9 +2,9 @@
   "data_characters": [
     {
       "id": 1,
-      "name": "Charlotta",
+      "name": "Carlotta",
       "characterImage": "img_path",
-      "characterImageIcon": "images/Resonator/Charlotta/Carlotta_Icon.webp",
+      "characterImageIcon": "images/Resonator/Carlotta/Carlotta_Icon.webp",
       "currentLevel": 0,
       "targetLevel": 0,
       "currentAscension": 0,
@@ -24,9 +24,9 @@
 
     {
       "id": 0,
-      "name": "Charlotta",
+      "name": "Carlotta",
       "characterImage": "img_path",
-      "characterImageIcon": "images/Resonator/Charlotta/Carlotta_Icon.webp",
+      "characterImageIcon": "images/Resonator/Carlotta/Carlotta_Icon.webp",
       "currentLevel": 0,
       "targetLevel": 0,
       "currentAscension": 0,

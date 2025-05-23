@@ -96,7 +96,7 @@
 
     <!-- ///// start of calculation input ///// -->
 
-    <!-- start of level input -->
+    <!-- start of character level input -->
     <div>
       <p>character level :</p>
       <div class="row row-cols-2 g-2">
@@ -110,6 +110,7 @@
                 id="current-level"
                 class="form-control"
                 placeholder="current level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="current-level">current Level</label>
             </div>
@@ -127,6 +128,7 @@
                 id="target-level"
                 class="form-control"
                 placeholder="target level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="target-level">target Level</label>
             </div>
@@ -148,7 +150,7 @@
       <label for="result-level">result Level</label>
       <input type="number" id="result-level" placeholder="result level" />
     </div>
-    <!-- end of level input -->
+    <!-- end of character level input -->
 
     <!-- start of ascension input -->
     <div>
@@ -164,7 +166,10 @@
                 id="current-ascension"
                 class="form-control"
                 placeholder="current Ascension"
-              /><label for="current-ascension">current Ascension</label>
+                onkeyup="enforceMinMax(this)"
+                readonly
+              />
+              <label for="current-ascension">current Ascension</label>
             </div>
             <span class="input-group-text">/6</span>
           </div>
@@ -180,7 +185,10 @@
                 id="target-ascension"
                 class="form-control"
                 placeholder="target Ascension"
-              /><label for="target-ascension">target Ascension</label>
+                onkeyup="enforceMinMax(this)"
+                readonly
+              />
+              <label for="target-ascension">target Ascension</label>
             </div>
             <span class="input-group-text">/6</span>
           </div>
@@ -210,6 +218,7 @@
                 id="current-basic-attack-level"
                 class="form-control"
                 placeholder="current Normal Attack Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="current-basic-attack-level"
                 >current Basic Attack Level</label
@@ -229,6 +238,7 @@
                 id="target-basic-attack-level"
                 class="form-control"
                 placeholder="target Normal Attack Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="target-basic-attack-level"
                 >target Basic Attack Level</label
@@ -262,6 +272,7 @@
                 id="current-resonance-skill-level"
                 class="form-control"
                 placeholder="current resonance skill Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="current-resonance-skill-level"
                 >current resonance skill Level</label
@@ -281,6 +292,7 @@
                 id="target-resonance-skill-level"
                 class="form-control"
                 placeholder="target resonance skill Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="target-resonance-skill-level"
                 >target resonance skill Level</label
@@ -316,6 +328,7 @@
                 id="current-forte-circuit-level"
                 class="form-control"
                 placeholder="current forte circuit Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="current-forte-circuit-level"
                 >current forte circuit Level</label
@@ -335,6 +348,7 @@
                 id="target-forte-circuit-level"
                 class="form-control"
                 placeholder="target forte circuit Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="target-forte-circuit-level"
                 >target forte circuit Level</label
@@ -370,6 +384,7 @@
                 id="current-resonance-liberation-level"
                 class="form-control"
                 placeholder="current forte circuit Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="current-resonance-liberation-level"
                 >current resonance liberation Level</label
@@ -389,6 +404,7 @@
                 id="target-resonance-liberation-level"
                 class="form-control"
                 placeholder="target resonance liberation Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="target-resonance-liberation-level"
                 >target resonance liberation Level</label
@@ -424,6 +440,7 @@
                 id="current-intro-skill-level"
                 class="form-control"
                 placeholder="current intro skill Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="current-intro-skill-level"
                 >current intro skill Level</label
@@ -443,6 +460,7 @@
                 id="target-intro-skill-level"
                 class="form-control"
                 placeholder="target intro skill Level"
+                onkeyup="enforceMinMax(this)"
               />
               <label for="target-intro-skill-level"
                 >target intro skill Level</label
