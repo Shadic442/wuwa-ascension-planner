@@ -1,21 +1,9 @@
 window.onload = function () {
-  /* loadJSON(); */
   showCharacterList();
 };
 
-function loadJSON() {
-  fetch("data/character.json")
-    .then((response) => response.json())
-    .then((listOfCharacter) => {
-      nameTitle.innerHTML = listOfCharacter.data_characters[0].name;
-
-      /* console.log(listOfCharacter);
-      console.log(
-        `character text : ${listOfCharacter.data_characters[0].name}`
-      ); */
-    })
-    .catch((error) => console.error("Error fetching data:", error));
-}
+let jsonDataKeyCharacters = "jsonData";
+let pathToBaseCharactersJson = "data/character.json";
 
 //Option 1: Use localStorage (Client-Side Only)
 
@@ -42,9 +30,9 @@ console.log(jsonData.data_characters[0].targetLevel);
 console.log("Updated JSON saved to localStorage:", jsonData); */
 
 /**
-   * verification if localstorage is empty use data from character.json file
-   * if not use data from localstorage
-   */
+ * verification if localstorage is empty use data from character.json file
+ * if not use data from localstorage
+ */
 function localstorageIsEmpty(key) {
   if (
     localStorage.getItem(key) == null ||
@@ -56,14 +44,12 @@ function localstorageIsEmpty(key) {
   }
 }
 
-let jsonDataKey = "jsonData";
-let pathToBaseCharacterJson = "data/character.json";
 /**
  * fetch to load the initial data of characters,
  * either from the character json file
  * or from localstorage of the browser
  */
-fetch(pathToBaseCharacterJson)
+fetch(pathToBaseCharactersJson)
   .then((response) => response.json())
   .then((data) => {
     // Store it in a variable variable to store data
@@ -73,15 +59,15 @@ fetch(pathToBaseCharacterJson)
      * verification if localstorage is empty use data from character.json file
      * if not use data from localstorage
      */
-    if (localstorageIsEmpty(jsonDataKey)) {
+    if (localstorageIsEmpty(jsonDataKeyCharacters)) {
       // Store the JSON data into localStorage
       jsonData = data;
     } else {
-      jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
+      jsonData = JSON.parse(localStorage.getItem(jsonDataKeyCharacters));
     }
 
     // Store the JSON data into localStorage
-    localStorage.setItem("jsonData", JSON.stringify(jsonData));
+    localStorage.setItem(jsonDataKeyCharacters, JSON.stringify(jsonData));
 
     console.log("JSON data stored in localStorage:", jsonData);
   })
@@ -90,11 +76,11 @@ fetch(pathToBaseCharacterJson)
 let characterId = 0;
 // TODO: take a character id has parameter to update a specific character
 function update() {
-  fetch(pathToBaseCharacterJson)
+  fetch(pathToBaseCharactersJson)
     .then((response) => response.json)
     .then((data) => {
       //get the json data in localstorage or the local file then store it in variable jsonData
-      let jsonData = JSON.parse(localStorage.getItem("jsonData")) || data;
+      let jsonData = JSON.parse(localStorage.getItem(jsonDataKeyCharacters)) || data;
 
       //then modify the data of the json stored in jsonData variable with the data in the input
       let valueLevelCurrent = inputLevelCurrent.value;
@@ -102,7 +88,7 @@ function update() {
       jsonData.data_characters[characterId].currentLevel = valueLevelCurrent;
       jsonData.data_characters[characterId].targetLevel = valueLevelTarget;
       // store the modified jsonData in localStorage
-      localStorage.setItem("jsonData", JSON.stringify(jsonData));
+      localStorage.setItem(jsonDataKeyCharacters, JSON.stringify(jsonData));
 
       console.log("%c update button :", "color:orange;font-weight:bold");
       console.log("JSON data updated and stored in localStorage:", jsonData);
@@ -115,11 +101,11 @@ function update() {
 function getCharacterList(jsonData) {
   let listContent = "";
 
-  if (localstorageIsEmpty(jsonDataKey)) {
+  if (localstorageIsEmpty(jsonDataKeyCharacters)) {
     // Store the JSON data into localStorage
     jsonData = data;
   } else {
-    jsonData = JSON.parse(localStorage.getItem(jsonDataKey));
+    jsonData = JSON.parse(localStorage.getItem(jsonDataKeyCharacters));
   }
 
   jsonData.data_characters.forEach((a_Character) => {
@@ -132,6 +118,7 @@ function getCharacterList(jsonData) {
       />
       ${a_Character.name}
     </button>
+    <input type="hidden" id="${a_Character.id}" />
   </div>`;
 
     console.log("%c list character buttons :", "color:orange;font-weight:bold");

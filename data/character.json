@@ -12,6 +12,27 @@
       "skills": [
         {
           "normalAttack": {
+            "name": "Silent Execution",
+            "currentSkillLevel": 0,
+            "targetSkillLevel": 0
+          },
+          "resonanceSkill": {
+            "name": "Art of Violence",
+            "currentSkillLevel": 0,
+            "targetSkillLevel": 0
+          },
+          "forteCircuit": {
+            "name": "Lethal Repertoire",
+            "currentSkillLevel": 0,
+            "targetSkillLevel": 0
+          },
+          "resonanceLiberation": {
+            "name": "Era of New Wave",
+            "currentSkillLevel": 0,
+            "targetSkillLevel": 0
+          },
+          "introSkill": {
+            "name": "Wintertime Aria",
             "currentSkillLevel": 0,
             "targetSkillLevel": 0
           }

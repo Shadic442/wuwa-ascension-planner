@@ -46,19 +46,6 @@ let inputLevelResultResonanceSkill = document.getElementById(
 
 let totalResultResonanceSkillLevel = 0;
 
-// input for forte circuit level
-let inputLevelCurrentForteCircuit = document.getElementById(
-  "current-forte-circuit-level"
-);
-let inputLevelTargetForteCircuit = document.getElementById(
-  "target-forte-circuit-level"
-);
-let inputLevelResultForteCircuit = document.getElementById(
-  "result-forte-circuit-level"
-);
-
-let totalResultForteCircuitLevel = 0;
-
 // input for resonance liberation level
 let inputLevelCurrentResonanceLiberation = document.getElementById(
   "current-resonance-liberation-level"
@@ -71,6 +58,19 @@ let inputLevelResultResonanceLiberation = document.getElementById(
 );
 
 let totalResultResonanceLiberationLevel = 0;
+
+// input for forte circuit level
+let inputLevelCurrentForteCircuit = document.getElementById(
+  "current-forte-circuit-level"
+);
+let inputLevelTargetForteCircuit = document.getElementById(
+  "target-forte-circuit-level"
+);
+let inputLevelResultForteCircuit = document.getElementById(
+  "result-forte-circuit-level"
+);
+
+let totalResultForteCircuitLevel = 0;
 
 // input for intro skill level
 let inputLevelCurrentIntroSkill = document.getElementById(
@@ -94,7 +94,8 @@ function calculateLevel(current, target) {
 
   inputAscensionTarget.value = calculateAscension(target.value);
   inputAscensionCurrent.value = calculateAscension(current.value);
-  inputAscensionResult.value = calculateAscension(target.value) - calculateAscension(current.value);
+  inputAscensionResult.value =
+    calculateAscension(target.value) - calculateAscension(current.value);
 
   console.log("%c calculating levels", "color:orange;font-weight:bold");
   console.log(`target charcater level : ${target.value}`);
@@ -137,7 +138,8 @@ function calculateAscension(level) {
 function calculateLevelBasicAttack(current, target) {
   inputIsEmpty(current, target);
 
-  totalResultBasicAttackLevel = parseInt(target.value) - parseInt(current.value);
+  totalResultBasicAttackLevel =
+    parseInt(target.value) - parseInt(current.value);
   inputLevelResultBasicAttack.value = totalResultBasicAttackLevel;
 
   console.log(
@@ -155,7 +157,8 @@ function calculateLevelBasicAttack(current, target) {
 function calculateLevelResonanceSkill(current, target) {
   inputIsEmpty(current, target);
 
-  totalResultResonanceSkillLevel = parseInt(target.value) - parseInt(current.value);
+  totalResultResonanceSkillLevel =
+    parseInt(target.value) - parseInt(current.value);
   inputLevelResultResonanceSkill.value = totalResultResonanceSkillLevel;
 
   console.log(
@@ -164,26 +167,9 @@ function calculateLevelResonanceSkill(current, target) {
   );
   console.log(`current resonance skill level : ${current.value}`);
   console.log(`target resonance skill level : ${target.value}`);
-  console.log(`total resonance skill level up : ${totalResultResonanceSkillLevel}`);
-}
-
-/** calculate characters Forte Circuit levels */
-function calculateLevelForteCircuit(current, target) {
-  inputIsEmpty(current, target);
-
-  totalResultForteCircuitLevel =
-    parseInt(target.value) - parseInt(current.value);
-  inputLevelResultForteCircuit.value = totalResultForteCircuitLevel;
-
   console.log(
-    "%c calculating resonance skill level",
-    "color:orange;font-weight:bold"
+    `total resonance skill level up : ${totalResultResonanceSkillLevel}`
   );
-  console.log(`current Forte Circuit level : ${current.value}`);
-  console.log(`target Forte Circuit level : ${target.value}`);
-  console.log(`total Forte Circuit level up : ${totalResultForteCircuitLevel}`);
-
-  return totalResultForteCircuitLevel;
 }
 
 /** calculate characters resonance liberation levels */
@@ -206,6 +192,25 @@ function calculateLevelResonanceLiberation(current, target) {
   );
 
   return totalResultResonanceLiberationLevel;
+}
+
+/** calculate characters Forte Circuit levels */
+function calculateLevelForteCircuit(current, target) {
+  inputIsEmpty(current, target);
+
+  totalResultForteCircuitLevel =
+    parseInt(target.value) - parseInt(current.value);
+  inputLevelResultForteCircuit.value = totalResultForteCircuitLevel;
+
+  console.log(
+    "%c calculating resonance skill level",
+    "color:orange;font-weight:bold"
+  );
+  console.log(`current Forte Circuit level : ${current.value}`);
+  console.log(`target Forte Circuit level : ${target.value}`);
+  console.log(`total Forte Circuit level up : ${totalResultForteCircuitLevel}`);
+
+  return totalResultForteCircuitLevel;
 }
 
 /** calculate characters intro skill levels */
@@ -237,13 +242,13 @@ function calculate() {
     inputLevelCurrentResonanceSkill,
     inputLevelTargetResonanceSkill
   );
-  calculateLevelForteCircuit(
-    inputLevelCurrentForteCircuit,
-    inputLevelTargetForteCircuit
-  );
   calculateLevelResonanceLiberation(
     inputLevelCurrentResonanceLiberation,
     inputLevelTargetResonanceLiberation
+  );
+  calculateLevelForteCircuit(
+    inputLevelCurrentForteCircuit,
+    inputLevelTargetForteCircuit
   );
   calculateLevelIntroSkill(
     inputLevelCurrentIntroSkill,

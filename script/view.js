@@ -1,5 +1,5 @@
 function showCharacterList() {
-  const url = pathToBaseCharacterJson;
+  const url = pathToBaseCharactersJson;
   fetch(url)
     .then((response) => response.json())
     .then((jsonData) => getCharacterList(jsonData));
