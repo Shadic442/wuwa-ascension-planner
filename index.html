@@ -490,6 +490,7 @@
     >
       calculate
     </button>
+
     <button type="button" class="btn btn-primary" onclick="update()">
       update
     </button>
@@ -497,7 +498,7 @@
     <!-- start of Modal for calculation -->
     <div
       class="modal fade"
-      id="modlaCalculate"
+      id="modal-calculate"
       tabindex="-1"
       aria-labelledby="modlaCalculateLabel"
       aria-hidden="true"
@@ -505,9 +506,34 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="modlaCalculateLabel">
-              Modal title
-            </h1>
+            <!-- <div>
+              <h1 class="modal-title fs-5" id="modlaCalculateLabel">
+                Modal title
+              </h1>
+
+              <p>5 star</p>
+            </div> -->
+
+            <!-- start of modal-calculation-title -->
+            <div class="container text-center" id="modal-calculation-title">
+              <div class="row">
+                <div class="col text-start">
+                  <h1 class="modal-title fs-5" id="modal-calculate-label">
+                    Modal title
+                  </h1>
+                  <p>5 star</p>
+                </div>
+                <div class="col"></div>
+                <div class="col text-end">
+                  <img
+                    src="images/Resonator/Carlotta/Carlotta_Icon.webp"
+                    alt="Carlotta_Icon"
+                    width="48px"
+                  />
+                </div>
+              </div>
+            </div>
+
             <button
               type="button"
               class="btn-close"
@@ -515,9 +541,12 @@
               aria-label="Close"
             ></button>
           </div>
+          <!-- end of modal-calculation-title -->
+
           <!-- start of calculation input -->
-          <div class="modal-body">...</div>
+          <div class="modal-body" id="">test</div>
           <!-- end of calculation input -->
+
           <div class="modal-footer">
             <button
               type="button"
@@ -526,12 +555,13 @@
             >
               Close
             </button>
+
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- end of Modal -->
+    <!-- end of Modal for calculation -->
   </body>
 </html>
 

@@ -80,7 +80,8 @@ function update() {
     .then((response) => response.json)
     .then((data) => {
       //get the json data in localstorage or the local file then store it in variable jsonData
-      let jsonData = JSON.parse(localStorage.getItem(jsonDataKeyCharacters)) || data;
+      let jsonData =
+        JSON.parse(localStorage.getItem(jsonDataKeyCharacters)) || data;
 
       //then modify the data of the json stored in jsonData variable with the data in the input
       let valueLevelCurrent = inputLevelCurrent.value;
@@ -108,9 +109,10 @@ function getCharacterList(jsonData) {
     jsonData = JSON.parse(localStorage.getItem(jsonDataKeyCharacters));
   }
 
+  //data-bs-toggle="modal" data-bs-target="#modal-calculate"
   jsonData.data_characters.forEach((a_Character) => {
     listContent += `<div class="d-grid gap-2">
-    <button type="button" class="btn" id="${a_Character.id}" data-bs-toggle="modal" data-bs-target="#modlaCalculate">
+    <button type="button" class="btn" id="${a_Character.id}" onclick='testModalFunction( ${JSON.stringify(a_Character)} )'>
       <img
         src=${a_Character.characterImageIcon}
         alt="Carlotta_Icon"
@@ -123,6 +125,9 @@ function getCharacterList(jsonData) {
 
     console.log("%c list character buttons :", "color:orange;font-weight:bold");
     console.log(`name : ${a_Character.name}`);
+    console.log("%c one character :", "color:orange;font-weight:bold");
+    console.log(`name : ${a_Character.name}`);
+    console.log(`data : ${JSON.stringify(a_Character, null, 2)}`);
   });
 
   /* for (let index = 0; index < jsonData.data_characters.length; index++) {
@@ -142,4 +147,16 @@ function getCharacterList(jsonData) {
   } */
 
   $("#characterListEntry").html(listContent);
+}
+
+function testModalFunction(jsonData) {
+  /* let MyModal = ``;
+  document.getElementById("contenu").innerHTML = form;
+  $("#testModal").modal("show"); */
+
+  //const myModal = new bootstrap.Modal(document.getElementById('modal-calculate'));
+  //JSON.stringify(jsonData);
+  //JSON.parse(jsonData);
+  document.getElementById("modal-calculate-label").innerHTML = jsonData.name;
+  $("#modal-calculate").modal("toggle");
 }
